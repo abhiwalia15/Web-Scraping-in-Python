@@ -1,0 +1,10 @@
+SERIAL NO.,period,short_description,temp,desc,temp_nums,is_night
+0,Today,Sunny,High: 67 °F,"Today: Sunny, with a high near 67. West southwest wind 5 to 10 mph increasing to 15 to 20 mph in the afternoon. Winds could gust as high as 26 mph. ",67,False
+1,Tonight,Patchy Fog,Low: 56 °F,"Tonight: Patchy fog after 11pm.  Otherwise, mostly cloudy, with a low around 56. South southwest wind 16 to 21 mph decreasing to 10 to 15 mph in the evening. Winds could gust as high as 26 mph. ",56,True
+2,Wednesday,Patchy Fogthen MostlySunny,High: 65 °F,"Wednesday: Patchy fog before 11am.  Otherwise, mostly sunny, with a high near 65. West southwest wind 7 to 14 mph. ",65,False
+3,WednesdayNight,Mostly Cloudy,Low: 54 °F,"Wednesday Night: Mostly cloudy, with a low around 54. West southwest wind 10 to 16 mph, with gusts as high as 21 mph. ",54,True
+4,Thursday,Mostly Sunny,High: 66 °F,"Thursday: Mostly sunny, with a high near 66. West wind 10 to 17 mph, with gusts as high as 23 mph. ",66,False
+5,ThursdayNight,Mostly Clear,Low: 55 °F,"Thursday Night: Mostly clear, with a low around 55.",55,True
+6,Friday,Sunny,High: 74 °F,"Friday: Sunny, with a high near 74.",74,False
+7,FridayNight,Clear,Low: 55 °F,"Friday Night: Clear, with a low around 55.",55,True
+8,Saturday,Sunny,High: 74 °F,"Saturday: Sunny, with a high near 74.",74,False

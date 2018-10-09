@@ -1,5 +1,7 @@
 import requests
 from bs4 import BeautifulSoup as bs
+import pandas as pd
+
 
 ''' * Download the web page containing the forecast.
  * Create a BeautifulSoup class to parse the page.
@@ -46,16 +48,39 @@ and pass in the attribute we want as a key'''
 
 period_tags = seven_day.select('.tombstone-container .period-name')
 periods = [pt.get_text() for pt in period_tags]
-print(periods)
+#print(periods)
 
 short_desc_tags = seven_day.select('.tombstone-container .short-desc')
-short_descs = [sdt.get_text() for sdt in short_desc_tags]
-print(short_descs)
+short_descs = [sd.get_text() for sd in short_desc_tags]
+#print(short_descs)
 
 temp_tags = seven_day.select('.tombstone-container .temp')
 temps = [t.get_text() for t in temp_tags]
-print(temps)
+#print(temps)
 
 title_tags = seven_day.select('.tombstone-container img')
 descs = [d['title'] for d in title_tags]
-print(descs)
+#print(descs)
+
+weather = pd.DataFrame({
+			'period': periods,
+			'short_description': short_descs,
+			'temp': temps,
+			'desc': descs,
+			})
+weather.index.name = 'SERIAL NO.'
+print(weather)
+
+temp_nums = weather['temp'].str.extract("(?P<temp_num>\d+)", expand=False)
+weather['temp_nums'] = temp_nums.astype('int')
+#print(temp_nums.mean())
+#print(temp_nums.median())
+#print(temp_nums.count())
+#print(temp_nums)
+
+is_night = weather['temp'].str.contains("Low")
+weather['is_night'] = is_night
+#print(is_night)
+#print(weather)
+
+weather.to_csv('weather.csv')
