@@ -1,11 +1,12 @@
 import requests
 
-#response = requests.get('http://api.open-notify.org/iss-now.json')
-
+response = requests.get('http://api.open-notify.org/iss-now.json')
+print(response.content)
+print('------------------------------------------------------------')
 
 # Set up the parameters we want to pass to the API.
-# This is the latitude and longitude of New York City.
-parameters = {'lat':40.71, 'lon':-74}
+# This is the latitude and longitude of chicago .
+parameters = {'lat':37.71, 'lon':-124}
 # Make a get request with the parameters.
 response = requests.get('http://api.open-notify.org/iss-pass.json', params = parameters)
 
