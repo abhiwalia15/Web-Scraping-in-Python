@@ -22,7 +22,7 @@ seven_day = soup.find(id='seven-day-forecast')
 #print(seven_day.prettify())
 
 forecast_items = seven_day.find_all(class_="tombstone-container")
-tonight = forecast_items[3]
+tonight = forecast_items[0]
 #print(tonight.prettify())
 
 
@@ -84,3 +84,5 @@ weather['is_night'] = is_night
 #print(weather)
 
 weather.to_csv('weather.csv')
+weather.to_json('weather.json')
+weather.to_html('weather.html')
